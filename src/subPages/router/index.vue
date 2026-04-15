@@ -154,20 +154,20 @@ function handleNavigate(url: string) {
 </script>
 
 <template>
-  <view class="min-h-screen bg-gray-100 py-3 dark:bg-[var(--wot-dark-background)]">
+  <view class="min-h-screen py-3">
     <!-- 头部介绍 -->
     <view class="mx-3 mb-3">
-      <view class="rounded-3 bg-white px-5 py-8 text-center dark:bg-[var(--wot-dark-background2)]">
+      <view class="rounded-3 px-5 py-8 text-center wot-bg-filled-oppo">
         <view class="mb-3 text-10">
           🚀
         </view>
-        <view class="mb-2 text-6 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="mb-2 text-6 font-bold wot-text-text-main">
           @wot-ui/router
         </view>
-        <view class="mb-2 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-2 text-3.5 leading-relaxed wot-text-text-secondary">
           轻量级路由管理解决方案
         </view>
-        <view class="text-3 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+        <view class="text-3 wot-text-text-secondary">
           支持编程式导航、参数传递、导航守卫等功能
         </view>
       </view>
@@ -175,36 +175,36 @@ function handleNavigate(url: string) {
 
     <!-- 当前路由信息 -->
     <demo-block title="当前路由信息" transparent>
-      <view class="rounded-3 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="flex items-center justify-between border-b border-gray-100 py-2 last:border-b-0 dark:border-[var(--wot-dark-border)]">
-          <text class="text-3.5 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+      <view class="rounded-3 p-4 wot-bg-filled-oppo">
+        <view class="flex items-center justify-between border-b py-2 wot-border-border-main last:border-b-0">
+          <text class="text-3.5 wot-text-text-secondary">
             路径:
           </text>
-          <text class="text-3.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <text class="text-3.5 font-mono wot-text-text-main">
             {{ route.path }}
           </text>
         </view>
-        <view class="flex items-center justify-between border-b border-gray-100 py-2 last:border-b-0 dark:border-[var(--wot-dark-border)]">
-          <text class="text-3.5 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+        <view class="flex items-center justify-between border-b py-2 wot-border-border-main last:border-b-0">
+          <text class="text-3.5 wot-text-text-secondary">
             名称:
           </text>
-          <text class="text-3.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <text class="text-3.5 font-mono wot-text-text-main">
             {{ route.name || '未设置' }}
           </text>
         </view>
-        <view class="flex items-center justify-between border-b border-gray-100 py-2 last:border-b-0 dark:border-[var(--wot-dark-border)]">
-          <text class="text-3.5 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+        <view class="flex items-center justify-between border-b py-2 wot-border-border-main last:border-b-0">
+          <text class="text-3.5 wot-text-text-secondary">
             参数:
           </text>
-          <text class="break-all text-3.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <text class="break-all text-3.5 font-mono wot-text-text-main">
             {{ JSON.stringify(route.params) }}
           </text>
         </view>
         <view class="flex items-center justify-between py-2">
-          <text class="text-3.5 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+          <text class="text-3.5 wot-text-text-secondary">
             查询:
           </text>
-          <text class="break-all text-3.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <text class="break-all text-3.5 font-mono wot-text-text-main">
             {{ JSON.stringify(route.query) }}
           </text>
         </view>
@@ -214,12 +214,12 @@ function handleNavigate(url: string) {
     <!-- 编程式导航 -->
     <demo-block title="编程式导航" transparent>
       <view class="space-y-3">
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             基础用法
           </view>
-          <view class="mb-3 flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.push(\'/user\')')">
-            <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mb-3 flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.push(\'/user\')')">
+            <text class="flex-1 text-3 font-mono wot-text-text-secondary">
               router.push('/user')
             </text>
             <wd-icon name="copy" size="16px" color="#666" />
@@ -242,15 +242,15 @@ function handleNavigate(url: string) {
     <!-- Router方法演示 -->
     <demo-block title="Router方法演示" transparent>
       <view class="space-y-3">
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             push 方法
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 leading-relaxed wot-text-text-secondary">
             保留当前页面，跳转到应用内的某个页面，相当于 uni.navigateTo()
           </view>
-          <view class="mb-3 flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.push(target)')">
-            <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mb-3 flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.push(target)')">
+            <text class="flex-1 text-3 font-mono wot-text-text-secondary">
               router.push(target)
             </text>
             <wd-icon name="copy" size="16px" color="#666" />
@@ -260,15 +260,15 @@ function handleNavigate(url: string) {
           </wd-button>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             pushTab 方法
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 leading-relaxed wot-text-text-secondary">
             跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，相当于 uni.switchTab()
           </view>
-          <view class="mb-3 flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.pushTab(target)')">
-            <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mb-3 flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.pushTab(target)')">
+            <text class="flex-1 text-3 font-mono wot-text-text-secondary">
               router.pushTab(target)
             </text>
             <wd-icon name="copy" size="16px" color="#666" />
@@ -278,15 +278,15 @@ function handleNavigate(url: string) {
           </wd-button>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             replace 方法
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 leading-relaxed wot-text-text-secondary">
             关闭当前页面，跳转到应用内的某个页面，相当于 uni.redirectTo()
           </view>
-          <view class="mb-3 flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.replace(target)')">
-            <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mb-3 flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.replace(target)')">
+            <text class="flex-1 text-3 font-mono wot-text-text-secondary">
               router.replace(target)
             </text>
             <wd-icon name="copy" size="16px" color="#666" />
@@ -296,40 +296,40 @@ function handleNavigate(url: string) {
           </wd-button>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             replaceAll 方法
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 leading-relaxed wot-text-text-secondary">
             关闭所有页面，打开到应用内的某个页面，相当于 uni.reLaunch()
           </view>
-          <view class="mb-3 flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.replaceAll(target)')">
-            <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mb-3 flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.replaceAll(target)')">
+            <text class="flex-1 text-3 font-mono wot-text-text-secondary">
               router.replaceAll(target)
             </text>
             <wd-icon name="copy" size="16px" color="#666" />
           </view>
-          <wd-button type="error" block @click="demoReplaceAll">
+          <wd-button type="danger" block @click="demoReplaceAll">
             演示 replaceAll 方法
           </wd-button>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             back 方法
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 leading-relaxed wot-text-text-secondary">
             关闭当前页面，返回上一页面或多级页面，相当于 uni.navigateBack()
           </view>
           <view class="mb-3 space-y-2">
-            <view class="flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.back()')">
-              <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+            <view class="wot-bg-bg flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.back()')">
+              <text class="flex-1 text-3 font-mono wot-text-text-secondary">
                 router.back()
               </text>
               <wd-icon name="copy" size="16px" color="#666" />
             </view>
-            <view class="flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.back({ delta: 2 })')">
-              <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+            <view class="wot-bg-bg flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.back({ delta: 2 })')">
+              <text class="flex-1 text-3 font-mono wot-text-text-secondary">
                 router.back({ delta: 2 })
               </text>
               <wd-icon name="copy" size="16px" color="#666" />
@@ -353,18 +353,18 @@ function handleNavigate(url: string) {
         </view>
       </view>
       <view class="space-y-3">
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             params 参数
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 wot-text-text-secondary">
             注意：name 和 params 搭配使用，与 query 效果相同
           </view>
           <view class="mb-3">
             <wd-input v-model="userId" placeholder="请输入用户名" />
           </view>
-          <view class="mb-3 flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.push({ name: \'user\', params: { username: \'eduardo\' } })')">
-            <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mb-3 flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.push({ name: \'user\', params: { username: \'eduardo\' } })')">
+            <text class="flex-1 text-3 font-mono wot-text-text-secondary">
               router.push({ name: 'user', params: { username: 'eduardo' } })
             </text>
             <wd-icon name="copy" size="16px" color="#666" />
@@ -374,18 +374,18 @@ function handleNavigate(url: string) {
           </wd-button>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             query 参数
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 wot-text-text-secondary">
             注意：path 可以与 query 一起使用，与 params 效果相同
           </view>
           <view class="mb-3">
             <wd-input v-model="searchKeyword" placeholder="请输入搜索关键词" />
           </view>
-          <view class="mb-3 flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.push({ path: \'/user\', query: { username: \'eduardo\' } })')">
-            <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mb-3 flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.push({ path: \'/user\', query: { username: \'eduardo\' } })')">
+            <text class="flex-1 text-3 font-mono wot-text-text-secondary">
               router.push({ path: '/user', query: { username: 'eduardo' } })
             </text>
             <wd-icon name="copy" size="16px" color="#666" />
@@ -395,11 +395,11 @@ function handleNavigate(url: string) {
           </wd-button>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             传递对象参数
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 leading-relaxed wot-text-text-secondary">
             URL有长度限制，复杂对象需要使用 encodeURIComponent 编码
           </view>
           <view class="grid grid-cols-2 mb-3 gap-2">
@@ -429,22 +429,22 @@ function handleNavigate(url: string) {
         </view>
       </view>
       <view class="space-y-3">
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             基础守卫 API
           </view>
-          <view class="mb-3 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3.5 leading-relaxed wot-text-text-secondary">
             beforeEach 和 afterEach 是最常用的导航守卫
           </view>
           <view class="mb-3 space-y-2">
-            <view class="flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.beforeEach((to, from, next) => { next() })')">
-              <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+            <view class="wot-bg-bg flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.beforeEach((to, from, next) => { next() })')">
+              <text class="flex-1 text-3 font-mono wot-text-text-secondary">
                 router.beforeEach((to, from, next) => { next() })
               </text>
               <wd-icon name="copy" size="16px" color="#666" />
             </view>
-            <view class="flex items-center justify-between border border-gray-200 rounded-2 bg-gray-50 p-3 dark:border-[var(--wot-dark-border)] dark:bg-[var(--wot-dark-background3)]" @click="copyCode('router.afterEach((to, from) => {  })')">
-              <text class="flex-1 text-3 text-gray-700 font-mono dark:text-[var(--wot-dark-color)]">
+            <view class="wot-bg-bg flex items-center justify-between border rounded-2 p-3 wot-border-border-main" @click="copyCode('router.afterEach((to, from) => {  })')">
+              <text class="flex-1 text-3 font-mono wot-text-text-secondary">
                 router.afterEach((to, from) => { console.log(to) })
               </text>
               <wd-icon name="copy" size="16px" color="#666" />

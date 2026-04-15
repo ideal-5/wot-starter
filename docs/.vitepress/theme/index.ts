@@ -1,7 +1,7 @@
 /*
  * @Author: weisheng
  * @Date: 2024-10-12 22:09:33
- * @LastEditTime: 2025-12-11 19:07:41
+ * @LastEditTime: 2026-04-08 19:37:30
  * @LastEditors: weisheng
  * @Description:
  * @FilePath: /wot-starter/docs/.vitepress/theme/index.ts
@@ -11,7 +11,6 @@ import ElementPlus from 'element-plus'
 import Theme from 'vitepress/theme'
 import { h } from 'vue'
 import Banner from './components/Banner.vue'
-// import HomeStar from './components/HomeStar.vue'
 // 导入组件
 import SvgImage from './components/SvgImage.vue'
 import VPIframe from './components/VPIframe.vue'
@@ -19,7 +18,6 @@ import WwAds from './components/WwAds.vue'
 import 'uno.css'
 import './styles/vars.css'
 import './styles/custom.css'
-import './styles/scrollbar.css'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 

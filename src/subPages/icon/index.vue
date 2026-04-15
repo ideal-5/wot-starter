@@ -67,20 +67,20 @@ function handleNavigate(url: string) {
 </script>
 
 <template>
-  <view class="min-h-screen bg-gray-100 py-3 dark:bg-[var(--wot-dark-background)]">
+  <view class="min-h-screen py-3">
     <!-- 头部介绍 -->
     <view class="mx-3 mb-3">
-      <view class="rounded-3 bg-white px-5 py-8 text-center dark:bg-[var(--wot-dark-background2)]">
+      <view class="rounded-3 px-5 py-8 text-center wot-bg-filled-oppo">
         <view class="mb-3 text-10">
           🎯
         </view>
-        <view class="mb-2 text-6 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="mb-2 text-6 font-bold wot-text-text-main">
           图标使用演示
         </view>
-        <view class="mb-2 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-2 text-3.5 leading-relaxed wot-text-text-secondary">
           WotUI 图标 & Iconify 图标集
         </view>
-        <view class="text-3 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+        <view class="text-3 wot-text-text-secondary">
           丰富的图标资源，满足各种使用场景
         </view>
       </view>
@@ -88,8 +88,8 @@ function handleNavigate(url: string) {
 
     <!-- 图标大小选择 -->
     <demo-block title="图标大小" transparent>
-      <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           选择图标大小
         </view>
         <view class="mb-4 flex flex-wrap gap-2">
@@ -100,17 +100,17 @@ function handleNavigate(url: string) {
             :class="[
               currentIconSize === size.value
                 ? 'bg-blue-500 text-white'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color)] dark:hover:bg-[var(--wot-dark-border)]',
+                : 'wot-text-text-secondary hover:bg-gray-200   dark:hover:bg-[var(--wot-dark-border)]',
             ]"
             @click="currentIconSize = size.value"
           >
             {{ size.name }} ({{ size.value }})
           </view>
         </view>
-        <view class="flex items-center justify-center rounded-2 bg-gray-50 p-4 space-x-4 dark:bg-[var(--wot-dark-background3)]">
+        <view class="wot-bg-bg flex items-center justify-center rounded-2 p-4 space-x-4">
           <wd-icon name="star" :size="currentIconSize" color="#f59e0b" />
           <view class="i-carbon:star text-yellow-500" :style="{ fontSize: currentIconSize }" />
-          <text class="text-3 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+          <text class="text-3 wot-text-text-secondary">
             当前大小: {{ currentIconSize }}
           </text>
         </view>
@@ -137,40 +137,40 @@ function handleNavigate(url: string) {
         <view
           v-for="icon in wotIcons"
           :key="icon.name"
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode(icon.name)"
         >
           <view class="mb-2 flex justify-center">
             <wd-icon :name="icon.name" :size="currentIconSize" color="#666" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             {{ icon.name }}
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             {{ icon.desc }}
           </view>
         </view>
       </view>
 
       <!-- 使用示例 -->
-      <view class="mt-4 rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="mt-4 rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           使用示例
         </view>
         <view class="space-y-3">
-          <view class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="rounded p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               基础用法:
             </view>
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               &lt;wd-icon name="star" size="20px" color="#f59e0b" /&gt;
             </view>
           </view>
-          <view class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="rounded p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               自定义样式:
             </view>
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               &lt;wd-icon name="home" size="24px" color="var(--wot-color-theme)" /&gt;
             </view>
           </view>
@@ -196,168 +196,168 @@ function handleNavigate(url: string) {
       <view class="grid grid-cols-3 gap-3 md:grid-cols-6 sm:grid-cols-4">
         <!-- add -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('add', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:add text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:add wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             add
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             添加
           </view>
         </view>
 
         <!-- close -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('close', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:close text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:close wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             close
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             关闭
           </view>
         </view>
 
         <!-- checkmark -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('checkmark', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:checkmark text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:checkmark wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             checkmark
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             确认
           </view>
         </view>
 
         <!-- arrow-right -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('arrow-right', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:arrow-right text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:arrow-right wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             arrow-right
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             右箭头
           </view>
         </view>
 
         <!-- home -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('home', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:home text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:home wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             home
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             首页
           </view>
         </view>
 
         <!-- search -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('search', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:search text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:search wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             search
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             搜索
           </view>
         </view>
 
         <!-- star -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('star', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:star text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:star wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             star
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             星级
           </view>
         </view>
 
         <!-- favorite -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('favorite', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:favorite text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:favorite wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             favorite
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             收藏
           </view>
         </view>
 
         <!-- settings -->
         <view
-          class="rounded-2 bg-white p-4 text-center transition-all duration-200 active:scale-95 dark:bg-[var(--wot-dark-background2)] hover:shadow-md"
+          class="rounded-2 p-4 text-center transition-all duration-200 wot-bg-filled-oppo active:scale-95 hover:shadow-md"
           @click="copyIconCode('settings', true)"
         >
           <view class="mb-2 flex justify-center">
-            <view class="i-carbon:settings text-gray-600 dark:text-[var(--wot-dark-color)]" :style="{ fontSize: currentIconSize }" />
+            <view class="i-carbon:settings wot-text-text-secondary" :style="{ fontSize: currentIconSize }" />
           </view>
-          <view class="mb-1 text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-2.5 font-mono wot-text-text-main">
             settings
           </view>
-          <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-2 wot-text-text-secondary">
             设置
           </view>
         </view>
       </view>
 
       <!-- 使用示例 -->
-      <view class="mt-4 rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="mt-4 rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           使用示例
         </view>
         <view class="space-y-3">
-          <view class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="rounded p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               UnoCSS 方式:
             </view>
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               &lt;div class="i-carbon:star text-xl text-yellow-500"&gt;&lt;/div&gt;
             </view>
           </view>
-          <view class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="rounded p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               自定义大小和颜色:
             </view>
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               &lt;div class="i-carbon:home" style="font-size: 24px; color: #3b82f6;"&gt;&lt;/div&gt;
             </view>
           </view>
@@ -367,8 +367,8 @@ function handleNavigate(url: string) {
 
     <!-- 对比演示 -->
     <demo-block title="图标对比" transparent>
-      <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-4 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-4 text-4 font-bold wot-text-text-main">
           相同功能图标对比
         </view>
         <view class="space-y-4">
@@ -409,16 +409,16 @@ function handleNavigate(url: string) {
     <!-- 使用建议 -->
     <demo-block title="使用建议" transparent>
       <view class="space-y-3">
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-6">
               💡
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               WotUI 图标适用场景
             </view>
           </view>
-          <view class="text-3 text-gray-600 leading-relaxed space-y-2 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 leading-relaxed wot-text-text-secondary space-y-2">
             <view>• 与WotUI组件配合使用时</view>
             <view>• 需要统一的图标API时</view>
             <view>• 快速开发，不需要过多自定义时</view>
@@ -426,16 +426,16 @@ function handleNavigate(url: string) {
           </view>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-6">
               🎨
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               Iconify 图标适用场景
             </view>
           </view>
-          <view class="text-3 text-gray-600 leading-relaxed space-y-2 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 leading-relaxed wot-text-text-secondary space-y-2">
             <view>• 需要更多图标选择时</view>
             <view>• 使用UnoCSS原子化CSS时</view>
             <view>• 需要灵活自定义样式时</view>
@@ -443,16 +443,16 @@ function handleNavigate(url: string) {
           </view>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-6">
               🤝
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               结合使用建议
             </view>
           </view>
-          <view class="text-3 text-gray-600 leading-relaxed space-y-2 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 leading-relaxed wot-text-text-secondary space-y-2">
             <view>
               • <text class="text-blue-600 font-bold dark:text-blue-400">
                 WotUI图标

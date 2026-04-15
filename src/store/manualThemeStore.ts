@@ -2,6 +2,12 @@ import type { ThemeColorOption, ThemeMode, ThemeState } from '@/composables/type
 import { defineStore } from 'pinia'
 import { themeColorOptions } from '@/composables/types/theme'
 
+function buildThemeVars(color: ThemeColorOption) {
+  return {
+    ...color.primaryShades,
+  }
+}
+
 /**
  * 完整版主题状态管理
  * 支持手动切换主题、主题色选择、跟随系统主题等完整功能
@@ -12,19 +18,7 @@ export const useManualThemeStore = defineStore('manualTheme', {
     followSystem: true, // 是否跟随系统主题
     hasUserSet: false, // 用户是否手动设置过主题
     currentThemeColor: themeColorOptions[0],
-    themeVars: {
-      darkBackground: '#0f0f0f',
-      darkBackground2: '#1a1a1a',
-      darkBackground3: '#242424',
-      darkBackground4: '#2f2f2f',
-      darkBackground5: '#3d3d3d',
-      darkBackground6: '#4a4a4a',
-      darkBackground7: '#606060',
-      darkColor: '#ffffff',
-      darkColor2: '#e0e0e0',
-      darkColor3: '#a0a0a0',
-      colorTheme: themeColorOptions[0].primary,
-    },
+    themeVars: buildThemeVars(themeColorOptions[0]),
   }),
 
   getters: {
@@ -75,7 +69,10 @@ export const useManualThemeStore = defineStore('manualTheme', {
      */
     setCurrentThemeColor(color: ThemeColorOption) {
       this.currentThemeColor = color
-      this.themeVars.colorTheme = color.primary
+      this.themeVars = {
+        ...this.themeVars,
+        ...buildThemeVars(color),
+      }
     },
 
     /**

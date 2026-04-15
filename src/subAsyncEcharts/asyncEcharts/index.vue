@@ -38,7 +38,7 @@ definePage({
 <template>
   <view class="bg-gray-50 p-5">
     <!-- 饼图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         饼图示例
       </view>
@@ -46,7 +46,7 @@ definePage({
     </view>
 
     <!-- 柱状图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         柱状图示例
       </view>
@@ -54,7 +54,7 @@ definePage({
     </view>
 
     <!-- 折线图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         折线图示例
       </view>
@@ -62,7 +62,7 @@ definePage({
     </view>
 
     <!-- 雷达图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         雷达图示例
       </view>
@@ -70,7 +70,7 @@ definePage({
     </view>
 
     <!-- 散点图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         散点图示例
       </view>
@@ -78,7 +78,7 @@ definePage({
     </view>
 
     <!-- 环形图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         环形图示例
       </view>
@@ -86,7 +86,7 @@ definePage({
     </view>
 
     <!-- 漏斗图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         漏斗图示例
       </view>
@@ -94,7 +94,7 @@ definePage({
     </view>
 
     <!-- 仪表盘图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         仪表盘示例
       </view>
@@ -102,7 +102,7 @@ definePage({
     </view>
 
     <!-- 迷你折线图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         迷你折线图示例
       </view>
@@ -110,7 +110,7 @@ definePage({
     </view>
 
     <!-- 堆叠柱状图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         堆叠柱状图示例
       </view>
@@ -118,7 +118,7 @@ definePage({
     </view>
 
     <!-- 水球图 -->
-    <view class="mb-5 rounded-3 bg-white p-5 shadow-sm">
+    <view class="mb-5 rounded-3 bg-[var(--wot-filled-oppo)] p-5 shadow-sm">
       <view class="mb-5 text-center text-base text-gray-800 font-medium">
         水球图示例
       </view>

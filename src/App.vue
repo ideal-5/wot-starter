@@ -3,13 +3,13 @@ onLaunch(() => {})
 </script>
 
 <style lang="scss">
+@use '@wot-ui/ui/styles/theme/index.scss' as *;
 .page-wraper {
   min-height: calc(100vh - var(--window-top));
   box-sizing: border-box;
-  background: #f9f9f9;
+  background: var(--wot-filled-content);
 }
-
-.wot-theme-dark.page-wraper {
-  background: #222;
-}
+// .wot-theme-dark.page-wraper {
+//   background: #222;
+// }
 </style>

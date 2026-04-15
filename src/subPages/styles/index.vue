@@ -44,12 +44,12 @@ const colorCategories = ref([
   {
     name: '灰色系',
     colors: [
-      { name: 'gray-50', class: 'bg-gray-50', value: '#f9fafb' },
+      { name: 'gray-50', class: 'wot-bg-bg', value: '#f9fafb' },
       { name: 'gray-100', class: 'bg-gray-100', value: '#f3f4f6' },
       { name: 'gray-200', class: 'bg-gray-200', value: '#e5e7eb' },
       { name: 'gray-300', class: 'bg-gray-300', value: '#d1d5db' },
       { name: 'gray-400', class: 'bg-gray-400', value: '#9ca3af' },
-      { name: 'gray-500', class: 'bg-gray-500', value: '#6b7280' },
+      { name: 'gray-500', class: 'wot-bg-bg0', value: '#6b7280' },
     ],
   },
   {
@@ -106,11 +106,11 @@ const fontExamples = ref([
 
 // 阴影和效果
 const effectExamples = ref([
-  { name: 'shadow-sm', class: 'shadow-sm bg-white p-4 rounded-2 mb-3' },
-  { name: 'shadow', class: 'shadow bg-white p-4 rounded-2 mb-3' },
-  { name: 'shadow-md', class: 'shadow-md bg-white p-4 rounded-2 mb-3' },
-  { name: 'shadow-lg', class: 'shadow-lg bg-white p-4 rounded-2 mb-3' },
-  { name: 'shadow-xl', class: 'shadow-xl bg-white p-4 rounded-2 mb-3' },
+  { name: 'shadow-sm', class: 'shadow-sm wot-bg-filled-oppo p-4 rounded-2 mb-3' },
+  { name: 'shadow', class: 'shadow wot-bg-filled-oppo p-4 rounded-2 mb-3' },
+  { name: 'shadow-md', class: 'shadow-md wot-bg-filled-oppo p-4 rounded-2 mb-3' },
+  { name: 'shadow-lg', class: 'shadow-lg wot-bg-filled-oppo p-4 rounded-2 mb-3' },
+  { name: 'shadow-xl', class: 'shadow-xl wot-bg-filled-oppo p-4 rounded-2 mb-3' },
 ])
 
 // 切换动画
@@ -150,20 +150,20 @@ function handleNavigate(url: string) {
 </script>
 
 <template>
-  <view class="min-h-screen bg-gray-100 py-3 dark:bg-[var(--wot-dark-background)]">
+  <view class="min-h-screen py-3">
     <!-- 头部介绍 -->
     <view class="mx-3 mb-3">
-      <view class="rounded-3 bg-white px-5 py-8 text-center dark:bg-[var(--wot-dark-background2)]">
+      <view class="rounded-3 px-5 py-8 text-center wot-bg-filled-oppo">
         <view class="mb-3 text-10">
           🎨
         </view>
-        <view class="mb-2 text-6 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="mb-2 text-6 font-bold wot-text-text-main">
           UnoCSS 原子化CSS
         </view>
-        <view class="mb-2 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-2 text-3.5 leading-relaxed wot-text-text-secondary">
           即时按需的原子化CSS引擎
         </view>
-        <view class="text-3 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+        <view class="text-3 wot-text-text-secondary">
           具有高性能且极具灵活性的即时原子化CSS引擎
         </view>
       </view>
@@ -175,18 +175,18 @@ function handleNavigate(url: string) {
         <view
           v-for="feature in unocssFeatures"
           :key="feature.title"
-          class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]"
+          class="rounded-2 p-4 wot-bg-filled-oppo"
         >
           <view class="mb-2 text-6">
             {{ feature.icon }}
           </view>
-          <view class="mb-1 text-3.5 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="mb-1 text-3.5 font-bold wot-text-text-main">
             {{ feature.title }}
           </view>
-          <view class="mb-2 text-3 text-gray-600 leading-snug dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-2 text-3 leading-snug wot-text-text-secondary">
             {{ feature.desc }}
           </view>
-          <view class="rounded bg-gray-100 px-2 py-1 text-2.5 text-gray-700 font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]">
+          <view class="rounded px-2 py-1 text-2.5 font-mono wot-text-text-secondary">
             {{ feature.example }}
           </view>
         </view>
@@ -200,22 +200,22 @@ function handleNavigate(url: string) {
         :key="category.name"
         class="mb-4 last:mb-0"
       >
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           {{ category.name }}
         </view>
         <view class="grid grid-cols-3 gap-2">
           <view
             v-for="color in category.colors"
             :key="color.name"
-            class="overflow-hidden rounded-2 bg-white shadow-sm dark:bg-[var(--wot-dark-background2)]"
+            class="overflow-hidden rounded-2 shadow-sm wot-bg-filled-oppo"
             @click="copyCode(color.class)"
           >
             <view :class="color.class" class="h-12 w-full" />
             <view class="p-2">
-              <view class="text-2.5 text-gray-800 font-mono dark:text-[var(--wot-dark-color)]">
+              <view class="text-2.5 font-mono wot-text-text-main">
                 {{ color.name }}
               </view>
-              <view class="text-2 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+              <view class="text-2 wot-text-text-secondary">
                 {{ color.value }}
               </view>
             </view>
@@ -230,13 +230,13 @@ function handleNavigate(url: string) {
         <view
           v-for="example in layoutExamples"
           :key="example.title"
-          class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]"
+          class="rounded-2 p-4 wot-bg-filled-oppo"
         >
           <view class="mb-3 flex items-center justify-between">
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               {{ example.title }}
             </view>
-            <view class="rounded bg-gray-100 px-2 py-1 text-2.5 text-gray-700 font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]" @click="copyCode(example.code)">
+            <view class="rounded px-2 py-1 text-2.5 font-mono wot-text-text-secondary" @click="copyCode(example.code)">
               {{ example.code }}
             </view>
           </view>
@@ -268,11 +268,11 @@ function handleNavigate(url: string) {
 
     <!-- 间距系统 -->
     <demo-block title="间距系统" transparent>
-      <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           内边距 (Padding)
         </view>
-        <view class="mb-4 text-3 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-4 text-3 leading-relaxed wot-text-text-secondary">
           点击下方色块复制对应的 padding 类名
         </view>
         <view class="flex flex-wrap items-center gap-2">
@@ -283,12 +283,12 @@ function handleNavigate(url: string) {
             class="cursor-pointer"
             @click="copyCode(spacing.name)"
           >
-            <text class="text-2.5 text-gray-700 font-mono">
+            <text class="text-2.5 font-mono wot-text-text-secondary">
               {{ spacing.name }}
             </text>
           </view>
         </view>
-        <view class="mt-4 text-2.5 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+        <view class="mt-4 text-2.5 wot-text-text-secondary">
           💡 提示：p-1 = 4px, p-2 = 8px, p-4 = 16px, p-6 = 24px, p-8 = 32px
         </view>
       </view>
@@ -296,25 +296,25 @@ function handleNavigate(url: string) {
 
     <!-- 字体系统 -->
     <demo-block title="字体系统" transparent>
-      <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           字体大小
         </view>
         <view class="space-y-3">
           <view
             v-for="font in fontExamples"
             :key="font.name"
-            class="flex items-center justify-between border-b border-gray-100 pb-2 last:border-b-0 dark:border-[var(--wot-dark-border)]"
+            class="flex items-center justify-between border-b pb-2 wot-border-border-main last:border-b-0"
             @click="copyCode(font.name)"
           >
-            <text :class="font.class" class="text-gray-800 dark:text-[var(--wot-dark-color)]">
+            <text :class="font.class" class="wot-text-text-main">
               字体演示文字
             </text>
             <view class="flex items-center space-x-2">
-              <text class="text-2.5 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+              <text class="text-2.5 wot-text-text-secondary">
                 {{ font.size }}
               </text>
-              <text class="rounded bg-gray-100 px-2 py-1 text-2.5 text-gray-700 font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]">
+              <text class="rounded px-2 py-1 text-2.5 font-mono wot-text-text-secondary">
                 {{ font.name }}
               </text>
             </view>
@@ -333,10 +333,10 @@ function handleNavigate(url: string) {
           @click="copyCode(effect.name)"
         >
           <view class="flex items-center justify-between">
-            <text class="text-3.5 text-gray-800">
+            <text class="text-3.5 wot-text-text-main">
               阴影效果演示
             </text>
-            <text class="rounded bg-gray-100 px-2 py-1 text-2.5 text-gray-700 font-mono">
+            <text class="rounded px-2 py-1 text-2.5 font-mono wot-text-text-secondary">
               {{ effect.name }}
             </text>
           </view>
@@ -348,8 +348,8 @@ function handleNavigate(url: string) {
     <demo-block title="交互效果" transparent>
       <view class="space-y-4">
         <!-- 悬停效果 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             悬停效果
           </view>
           <view class="grid grid-cols-2 gap-3">
@@ -364,14 +364,14 @@ function handleNavigate(url: string) {
               </text>
             </view>
           </view>
-          <view class="mt-3 rounded bg-gray-100 p-2 text-2.5 text-gray-700 font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]" @click="copyCode('hover:bg-blue-200 hover:scale-105 transition-all duration-300')">
+          <view class="mt-3 rounded p-2 text-2.5 font-mono wot-text-text-secondary" @click="copyCode('hover:bg-blue-200 hover:scale-105 transition-all duration-300')">
             hover:bg-blue-200 hover:scale-105 transition-all duration-300
           </view>
         </view>
 
         <!-- 动画效果 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             动画效果
           </view>
           <wd-button type="primary" block @click="toggleAnimation">
@@ -383,7 +383,7 @@ function handleNavigate(url: string) {
               :class="[
                 animationState
                   ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white transform rotate-12 scale-110 shadow-lg'
-                  : 'bg-gray-100 text-gray-800 transform rotate-0 scale-100 shadow-sm dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color)]',
+                  : 'wot-text-text-main transform rotate-0 scale-100 shadow-sm  ',
               ]"
             >
               <text class="text-4 font-bold">
@@ -391,7 +391,7 @@ function handleNavigate(url: string) {
               </text>
             </view>
           </view>
-          <view class="mt-3 rounded bg-gray-100 p-2 text-2.5 text-gray-700 leading-relaxed font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]" @click="copyCode('transition-all duration-500 ease-in-out transform rotate-12 scale-110')">
+          <view class="mt-3 rounded p-2 text-2.5 leading-relaxed font-mono wot-text-text-secondary" @click="copyCode('transition-all duration-500 ease-in-out transform rotate-12 scale-110')">
             transition-all duration-500 ease-in-out\n
             transform rotate-12 scale-110
           </view>
@@ -401,15 +401,15 @@ function handleNavigate(url: string) {
 
     <!-- 响应式设计 -->
     <demo-block title="响应式设计" transparent>
-      <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           响应式断点
         </view>
-        <view class="mb-4 text-3 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-4 text-3 leading-relaxed wot-text-text-secondary">
           UnoCSS 支持响应式断点，可以根据屏幕尺寸应用不同样式
         </view>
         <view class="mb-4 rounded-2 bg-red-100 p-4 text-center dark:bg-red-900/30 lg:bg-yellow-100 md:bg-blue-100 sm:bg-green-100 dark:lg:bg-yellow-900/30 dark:md:bg-blue-900/30 dark:sm:bg-green-900/30">
-          <text class="text-3.5 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+          <text class="text-3.5 font-bold wot-text-text-main">
             响应式背景色
           </text>
         </view>
@@ -422,7 +422,7 @@ function handleNavigate(url: string) {
             项目 {{ n }}
           </view>
         </view>
-        <view class="mt-4 rounded bg-gray-100 p-2 text-2.5 text-gray-700 leading-relaxed font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]" @click="copyCode('grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4')">
+        <view class="mt-4 rounded p-2 text-2.5 leading-relaxed font-mono wot-text-text-secondary" @click="copyCode('grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4')">
           grid-cols-1 sm:grid-cols-2\n
           md:grid-cols-3 lg:grid-cols-4
         </view>
@@ -433,8 +433,8 @@ function handleNavigate(url: string) {
     <demo-block title="实用工具类" transparent>
       <view class="space-y-4">
         <!-- 显示隐藏 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             显示/隐藏
           </view>
           <view class="mb-3 flex flex-wrap gap-2">
@@ -448,17 +448,17 @@ function handleNavigate(url: string) {
               弹性 (flex)
             </view>
           </view>
-          <view class="rounded bg-gray-100 p-2 text-2.5 text-gray-700 font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]" @click="copyCode('block inline flex hidden')">
+          <view class="rounded p-2 text-2.5 font-mono wot-text-text-secondary" @click="copyCode('block inline flex hidden')">
             block inline flex hidden
           </view>
         </view>
 
         <!-- 定位 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             定位系统
           </view>
-          <view class="relative h-24 rounded-2 bg-gray-100 dark:bg-[var(--wot-dark-background3)]">
+          <view class="relative h-24 rounded-2 bg-gray-100">
             <view class="absolute left-2 top-2 rounded bg-red-500 px-2 py-1 text-2.5 text-white">
               top-2 left-2
             </view>
@@ -468,11 +468,11 @@ function handleNavigate(url: string) {
             <view class="absolute bottom-2 left-2 rounded bg-green-500 px-2 py-1 text-2.5 text-white">
               bottom-2 left-2
             </view>
-            <view class="absolute bottom-2 right-2 rounded bg-purple-500 px-2 py-1 text-2.5 text-white">
+            <view class="absolute bottom-2 right-2 rounded bg-purple-500 px-2 py-1 text-2.5 text-white wot-bg-warning">
               bottom-2 right-2
             </view>
           </view>
-          <view class="mt-3 rounded bg-gray-100 p-2 text-2.5 text-gray-700 font-mono dark:bg-[var(--wot-dark-background3)] dark:text-[var(--wot-dark-color2)]" @click="copyCode('absolute relative top-2 left-2 right-2 bottom-2')">
+          <view class="mt-3 rounded p-2 text-2.5 font-mono wot-text-text-secondary" @click="copyCode('absolute relative top-2 left-2 right-2 bottom-2')">
             absolute relative top-2 left-2 right-2 bottom-2
           </view>
         </view>

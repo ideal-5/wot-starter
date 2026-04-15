@@ -1,8 +1,6 @@
-import process from 'node:process'
 import Uni from '@uni-helper/plugin-uni'
 import { isMpWeixin } from '@uni-helper/uni-env'
 import UniHelperComponents from '@uni-helper/vite-plugin-uni-components'
-import { WotResolver } from '@uni-helper/vite-plugin-uni-components/resolvers'
 import UniHelperLayouts from '@uni-helper/vite-plugin-uni-layouts'
 import UniHelperManifest from '@uni-helper/vite-plugin-uni-manifest'
 import UniHelperPages from '@uni-helper/vite-plugin-uni-pages'
@@ -13,11 +11,12 @@ import { UniEcharts } from 'uni-echarts/vite'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { defineConfig } from 'vite'
+import { WotResolver } from './src/resolver'
 // https://vitejs.dev/config/
 export default defineConfig({
   base: './',
   optimizeDeps: {
-    exclude: process.env.NODE_ENV === 'development' ? ['wot-design-uni', 'uni-echarts'] : [],
+    exclude: ['@wot-ui/ui', 'uni-echarts'],
   },
   plugins: [
     // https://github.com/uni-helper/vite-plugin-uni-manifest
@@ -62,8 +61,8 @@ export default defineConfig({
         from: '@wot-ui/router',
         imports: ['createRouter', 'useRouter', 'useRoute'],
       }, {
-        from: 'wot-design-uni',
-        imports: ['useToast', 'useMessage', 'useNotify', 'CommonUtil'],
+        from: '@wot-ui/ui',
+        imports: ['useToast', 'useDialog', 'useNotify', 'CommonUtil'],
       }, {
         from: 'alova/client',
         imports: ['usePagination', 'useRequest'],
@@ -76,4 +75,12 @@ export default defineConfig({
     // see unocss.config.ts for config
     UnoCSS(),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+        silenceDeprecations: ['legacy-js-api'],
+      },
+    },
+  },
 })

@@ -46,7 +46,7 @@ export default {
   <view
     class="mb-3 box-border w-full px-3 text-gray-500 last:mb-0 dark:text-gray-300"
     :class="[
-      transparent ? '' : 'bg-white dark:bg-[var(--wot-dark-background2)]',
+      transparent ? '' : 'var(--wot-filled-oppo)',
       customClass,
     ]"
   >

@@ -175,23 +175,23 @@ function handleNavigate(url: string) {
 </script>
 
 <template>
-  <view class="min-h-screen bg-gray-100 py-3 dark:bg-[var(--wot-dark-background)]">
+  <view class="min-h-screen py-3">
     <!-- 头部介绍 -->
     <view class="mx-3 mb-3">
-      <view class="rounded-3 bg-white px-5 py-8 text-center dark:bg-[var(--wot-dark-background2)]">
+      <view class="rounded-3 px-5 py-8 text-center wot-bg-filled-oppo">
         <view class="mb-3 text-10">
           🍍
         </view>
-        <view class="mb-2 text-6 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="mb-2 text-6 font-bold wot-text-text-main">
           Pinia 状态管理
         </view>
-        <view class="mb-2 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-2 text-3.5 leading-relaxed wot-text-text-secondary">
           Vue 3 的直观状态管理库
         </view>
-        <view class="mb-2 text-3 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-2 text-3 wot-text-text-secondary">
           轻量、类型安全、支持组合式API
         </view>
-        <view class="text-3 text-gray-500 dark:text-[var(--wot-dark-color2)]">
+        <view class="text-3 wot-text-text-secondary">
           本项目默认持久化所有 Store 数据，开发者可以配置排除列表
         </view>
       </view>
@@ -199,12 +199,12 @@ function handleNavigate(url: string) {
 
     <!-- 基础计数器演示 -->
     <demo-block title="基础使用 - 计数器" transparent>
-      <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+      <view class="rounded-2 p-4 wot-bg-filled-oppo">
         <view class="mb-4 text-center">
           <view class="mb-2 text-8 text-blue-500">
             {{ counterStore.count }}
           </view>
-          <view class="text-3 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 wot-text-text-secondary">
             双倍值: {{ counterStore.doubleCount }}
           </view>
         </view>
@@ -223,12 +223,12 @@ function handleNavigate(url: string) {
 
         <!-- 代码示例 -->
         <view class="space-y-3">
-          <view class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="rounded p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               定义 Store:
             </view>
             <view
-              class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]" @click="copyCode(`const useCounterStore = defineStore('counter', () => {
+              class="text-2.5 leading-relaxed font-mono wot-text-text-secondary" @click="copyCode(`const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
   const doubleCount = computed(() => count.value * 2)
 
@@ -248,12 +248,12 @@ function handleNavigate(url: string) {
             </view>
           </view>
 
-          <view class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="rounded p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               使用 Store:
             </view>
             <view
-              class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]" @click="copyCode(`const counterStore = useCounterStore()
+              class="text-2.5 leading-relaxed font-mono wot-text-text-secondary" @click="copyCode(`const counterStore = useCounterStore()
 // 直接使用
 counterStore.increment()
 // 响应式访问
@@ -281,8 +281,8 @@ console.log(counterStore.count)`)"
 
       <view class="space-y-4">
         <!-- 当前用户信息 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             当前用户信息
           </view>
 
@@ -291,36 +291,36 @@ console.log(counterStore.count)`)"
               {{ userStore.userInfo.avatar }}
             </view>
             <view class="flex-1">
-              <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+              <view class="text-4 font-bold wot-text-text-main">
                 {{ userStore.userInfo.name }}
               </view>
-              <view class="text-3 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+              <view class="text-3 wot-text-text-secondary">
                 {{ userStore.userInfo.email }}
               </view>
             </view>
           </view>
 
-          <view v-else class="text-center text-gray-500 dark:text-[var(--wot-dark-color2)]">
+          <view v-else class="text-center wot-text-text-secondary">
             暂无用户信息
           </view>
         </view>
 
         <!-- 用户信息表单 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             设置用户信息
           </view>
 
           <view class="space-y-3">
             <view>
-              <view class="mb-1 text-3 text-gray-700 dark:text-[var(--wot-dark-color)]">
+              <view class="mb-1 text-3 wot-text-text-secondary">
                 用户名:
               </view>
               <wd-input v-model="userForm.name" placeholder="请输入用户名" />
             </view>
 
             <view>
-              <view class="mb-1 text-3 text-gray-700 dark:text-[var(--wot-dark-color)]">
+              <view class="mb-1 text-3 wot-text-text-secondary">
                 邮箱:
               </view>
               <wd-input v-model="userForm.email" placeholder="请输入邮箱" />
@@ -350,8 +350,8 @@ console.log(counterStore.count)`)"
         </view>
       </view>
 
-      <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-        <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+      <view class="rounded-2 p-4 wot-bg-filled-oppo">
+        <view class="mb-3 text-4 font-bold wot-text-text-main">
           临时消息
         </view>
 
@@ -364,7 +364,7 @@ console.log(counterStore.count)`)"
           </view>
         </view>
 
-        <view v-else class="mb-4 text-center text-gray-500 dark:text-[var(--wot-dark-color2)]">
+        <view v-else class="mb-4 text-center wot-text-text-secondary">
           暂无临时消息
         </view>
 
@@ -385,18 +385,18 @@ console.log(counterStore.count)`)"
     <!-- 持久化原理 -->
     <demo-block title="持久化实现原理" transparent>
       <view class="space-y-4">
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             持久化插件
           </view>
-          <view class="mb-3 text-3 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3 leading-relaxed wot-text-text-secondary">
             项目使用自定义的 Pinia 插件实现持久化，位于 <text class="text-blue-600 font-mono dark:text-blue-400">
               src/store/persist.ts
             </text>
           </view>
 
           <view
-            class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]" @click="copyCode(`function persist({ store }, excludedIds) {
+            class="rounded p-3" @click="copyCode(`function persist({ store }, excludedIds) {
   // 检查是否需要排除
   if (excludedIds.includes(store.$id)) return
 
@@ -412,10 +412,10 @@ console.log(counterStore.count)`)"
   })
 }`)"
           >
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               核心实现:
             </view>
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               function persist({ store }, excludedIds) {\n
               &nbsp;&nbsp;// 检查是否需要排除\n
               &nbsp;&nbsp;if (excludedIds.includes(store.$id)) return\n
@@ -430,30 +430,30 @@ console.log(counterStore.count)`)"
           </view>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             排除列表
           </view>
-          <view class="mb-3 text-3 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3 leading-relaxed wot-text-text-secondary">
             可以通过排除列表控制哪些 Store 不需要持久化
           </view>
 
           <view
-            class="rounded bg-gray-100 p-3 dark:bg-[var(--wot-dark-background3)]" @click="copyCode(`// 在 persist.ts 中配置排除列表
+            class="rounded p-3" @click="copyCode(`// 在 persist.ts 中配置排除列表
 persist(context, ['global-register', 'temp'])`)"
           >
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               // 当前排除的 Store ID:\n
               ['global-register', 'temp']
             </view>
           </view>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
-          <view class="mb-3 text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
+          <view class="mb-3 text-4 font-bold wot-text-text-main">
             使用说明
           </view>
-          <view class="text-3 text-gray-600 leading-relaxed space-y-2 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 leading-relaxed wot-text-text-secondary space-y-2">
             <view>
               • <text class="text-green-600 font-bold dark:text-green-400">
                 自动持久化
@@ -482,16 +482,16 @@ persist(context, ['global-register', 'temp'])`)"
     <!-- 最佳实践 -->
     <demo-block title="最佳实践" transparent>
       <view class="space-y-3">
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-6">
               💡
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               Store 设计建议
             </view>
           </view>
-          <view class="text-3 text-gray-600 leading-relaxed space-y-2 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 leading-relaxed wot-text-text-secondary space-y-2">
             <view>• 使用组合式 API 风格定义 Store</view>
             <view>• 合理拆分 Store，避免单个 Store 过于庞大</view>
             <view>• 使用 TypeScript 获得更好的类型支持</view>
@@ -499,16 +499,16 @@ persist(context, ['global-register', 'temp'])`)"
           </view>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-6">
               🔒
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               持久化建议
             </view>
           </view>
-          <view class="text-3 text-gray-600 leading-relaxed space-y-2 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 leading-relaxed wot-text-text-secondary space-y-2">
             <view>• 敏感数据（如密码）不要持久化存储</view>
             <view>• 大量数据考虑使用数据库而非本地存储</view>
             <view>• 临时状态（如加载状态）不需要持久化</view>
@@ -516,16 +516,16 @@ persist(context, ['global-register', 'temp'])`)"
           </view>
         </view>
 
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-6">
               ⚡
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               性能优化
             </view>
           </view>
-          <view class="text-3 text-gray-600 leading-relaxed space-y-2 dark:text-[var(--wot-dark-color2)]">
+          <view class="text-3 leading-relaxed wot-text-text-secondary space-y-2">
             <view>• 避免在 Store 中存储大量数据</view>
             <view>• 使用 computed 缓存复杂计算结果</view>
             <view>• 合理使用 $subscribe 监听状态变化</view>

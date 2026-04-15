@@ -119,20 +119,20 @@ function handleNavigate(url: string) {
 </script>
 
 <template>
-  <view class="min-h-screen bg-gray-100 py-3 dark:bg-[var(--wot-dark-background)]">
+  <view class="min-h-screen py-3">
     <!-- 头部介绍 -->
     <view class="mx-3 mb-3">
-      <view class="rounded-3 bg-white px-5 py-8 text-center dark:bg-[var(--wot-dark-background2)]">
+      <view class="rounded-3 px-5 py-8 text-center wot-bg-filled-oppo">
         <view class="mb-3 text-10">
           🌐
         </view>
-        <view class="mb-2 text-6 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+        <view class="mb-2 text-6 font-bold wot-text-text-main">
           Alova 网络请求
         </view>
-        <view class="mb-2 text-3.5 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="mb-2 text-3.5 leading-relaxed wot-text-text-secondary">
           极致高效的请求工具集
         </view>
-        <view class="text-3 text-gray-500 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+        <view class="text-3 leading-relaxed wot-text-text-secondary">
           alova完美兼容你最喜欢的HTTP client和UI框架，快速开发客户端和服务的应用的业务逻辑，同时让API信息与代码进行交互，像虫洞一样拉近后端协作距离，极致高效地集成你的APIs
         </view>
       </view>
@@ -144,17 +144,17 @@ function handleNavigate(url: string) {
         <view
           v-for="feature in alovaFeatures"
           :key="feature.title"
-          class="rounded-2 bg-white p-3 dark:bg-[var(--wot-dark-background2)]"
+          class="rounded-2 p-3 wot-bg-filled-oppo"
         >
           <view class="mb-2 flex items-center">
             <view class="mr-2 text-5">
               {{ feature.icon }}
             </view>
             <view class="flex-1">
-              <view class="text-3.5 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+              <view class="text-3.5 font-bold wot-text-text-main">
                 {{ feature.title }}
               </view>
-              <view class="text-2.5 text-gray-600 dark:text-[var(--wot-dark-color2)]">
+              <view class="text-2.5 wot-text-text-secondary">
                 {{ feature.description }}
               </view>
             </view>
@@ -167,16 +167,16 @@ function handleNavigate(url: string) {
     <demo-block title="useRequest Hook 演示" transparent>
       <view class="space-y-3">
         <!-- 宠物列表请求 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-5">
               🐾
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               宠物列表请求
             </view>
           </view>
-          <view class="mb-3 text-3 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3 leading-relaxed wot-text-text-secondary">
             使用 useRequest 获取宠物列表，支持参数传递和错误处理
           </view>
 
@@ -206,11 +206,11 @@ function handleNavigate(url: string) {
           </view>
 
           <!-- 代码示例 -->
-          <view class="mt-3 rounded-2 bg-gray-50 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mt-3 rounded-2 p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               代码示例:
             </view>
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               const { data, loading, send } = useRequest(\n
               &nbsp;&nbsp;(status) => Apis.pet.findPetsByStatus({ params: { status } }),\n
               &nbsp;&nbsp;{ immediate: false }\n
@@ -220,16 +220,16 @@ function handleNavigate(url: string) {
         </view>
 
         <!-- 用户登录请求 -->
-        <view class="rounded-2 bg-white p-4 dark:bg-[var(--wot-dark-background2)]">
+        <view class="rounded-2 p-4 wot-bg-filled-oppo">
           <view class="mb-3 flex items-center">
             <view class="mr-2 text-5">
               👤
             </view>
-            <view class="text-4 text-gray-800 font-bold dark:text-[var(--wot-dark-color)]">
+            <view class="text-4 font-bold wot-text-text-main">
               用户登录请求
             </view>
           </view>
-          <view class="mb-3 text-3 text-gray-600 leading-relaxed dark:text-[var(--wot-dark-color2)]">
+          <view class="mb-3 text-3 leading-relaxed wot-text-text-secondary">
             演示多参数传递和POST请求处理
           </view>
 
@@ -259,11 +259,11 @@ function handleNavigate(url: string) {
           </view>
 
           <!-- 代码示例 -->
-          <view class="mt-3 rounded-2 bg-gray-50 p-3 dark:bg-[var(--wot-dark-background3)]">
-            <view class="mb-2 text-3 text-gray-700 font-bold dark:text-[var(--wot-dark-color)]">
+          <view class="wot-bg-bg mt-3 rounded-2 p-3">
+            <view class="mb-2 text-3 font-bold wot-text-text-secondary">
               代码示例:
             </view>
-            <view class="text-2.5 text-gray-600 leading-relaxed font-mono dark:text-[var(--wot-dark-color2)]">
+            <view class="text-2.5 leading-relaxed font-mono wot-text-text-secondary">
               const { data, loading, send } = useRequest(\n
               &nbsp;&nbsp;(username, password) => Apis.user.loginUser({\n
               &nbsp;&nbsp;&nbsp;&nbsp;params: { username, password }\n
