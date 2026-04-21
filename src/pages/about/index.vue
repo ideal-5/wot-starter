@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useTeam } from '@/composables/useTeam'
+
 definePage({
   name: 'about',
   layout: 'tabbar',
@@ -7,46 +9,13 @@ definePage({
   },
 })
 
-// 核心团队成员
-const coreTeam = [
-  {
-    name: '不如摸鱼去',
-    avatar: 'https://avatars.githubusercontent.com/u/26426873?v=4',
-    role: '前端打工仔',
-    desc: '负责WotUI组件库的开发和维护',
-    github: 'https://github.com/Moonofweisheng',
-  },
-  {
-    name: '二狗',
-    avatar: 'https://avatars.githubusercontent.com/u/50100966?v=4',
-    role: '灵活就业大师',
-    desc: '问题毁灭者，总能迅速解决各种技术难题',
-    github: 'https://github.com/810505339',
-  },
-  {
-    name: 'RJQingHuan',
-    avatar: 'https://avatars.githubusercontent.com/u/53939074?v=4',
-    role: 'Pull Shark',
-    desc: '热衷参与开源组件建设',
-    github: 'https://github.com/RJQingHuan',
-  },
-  {
-    name: 'skiyee',
-    avatar: 'https://avatars.githubusercontent.com/u/120664167?v=4',
-    role: 'uni-ku 的创立者，重金雇佣兵',
-    desc: '精通 JS 和 TS 的全能攻城狮',
-    github: 'https://github.com/skiyee',
-  },
-  {
-    name: 'jasper-ops',
-    avatar: 'https://avatars.githubusercontent.com/u/85024227?v=4',
-    role: '新技术狂热分子',
-    desc: '始终走在技术前沿，热衷于探索最新的开发趋势',
-    github: 'https://github.com/jasper-ops',
-  },
-]
+const { data: coreTeam } = useTeam()
 
-function openUrl(url: string) {
+function openUrl(url?: string) {
+  if (!url) {
+    return
+  }
+
   window.open(url, '_blank')
 }
 
@@ -94,7 +63,7 @@ function donate() {
             {{ member.name }}
           </view>
           <view class="mb-2 text-2.5 text-blue-600 dark:text-blue-400">
-            {{ member.role }}
+            {{ member.title }}
           </view>
           <view class="text-2.5 leading-snug wot-text-text-secondary">
             {{ member.desc }}

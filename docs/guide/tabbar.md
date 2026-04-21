@@ -1,7 +1,7 @@
 ---
 title: 自定义 Tabbar
 iframe: true
-url: ''
+iframeFormatter: ''
 ---
 
 # 自定义 Tabbar
@@ -222,7 +222,7 @@ function onMessageRead() {
 }
 </script>
 ```
- 
+
 ## 取消自定义 Tabbar
 
 如果你想恢复使用 uni-app 原生 Tabbar，按以下步骤操作：

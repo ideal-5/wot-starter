@@ -1,7 +1,5 @@
 ---
-title: 暗黑模式
-iframe: true
-url: pages/index/index
+iframeFormatter: pages/index/index
 ---
 
 # 暗黑模式

@@ -1,7 +1,7 @@
 ---
 title: uni-echarts
 iframe: true
-url: subEcharts/echarts/index
+iframeFormatter: subEcharts/echarts/index
 ---
 # Echarts
 
