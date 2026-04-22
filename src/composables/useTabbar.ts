@@ -1,14 +1,14 @@
 export interface TabbarItem {
   name: string
-  value: number | null
+  value?: number
   active: boolean
   title: string
   icon: string
 }
 
 const tabbarItems = ref<TabbarItem[]>([
-  { name: 'home', value: null, active: true, title: '首页', icon: 'home' },
-  { name: 'about', value: null, active: false, title: '关于', icon: 'user' },
+  { name: 'home', active: true, title: '首页', icon: 'home' },
+  { name: 'about', active: false, title: '关于', icon: 'user' },
 ])
 
 export function useTabbar() {
@@ -21,7 +21,7 @@ export function useTabbar() {
 
   const getTabbarItemValue = (name: string) => {
     const item = tabbarItems.value.find(item => item.name === name)
-    return item && item.value ? item.value : null
+    return item?.value
   }
 
   const setTabbarItem = (name: string, value: number) => {
