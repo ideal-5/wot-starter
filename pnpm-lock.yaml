@@ -75,8 +75,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(vue@3.4.38(typescript@5.5.4))
       '@wot-ui/ui':
-        specifier: ^2.0.2
-        version: 2.0.2(vue@3.4.38(typescript@5.5.4))
+        specifier: ^2.0.3
+        version: 2.0.3(vue@3.4.38(typescript@5.5.4))
       '@wot-ui/unocss-preset':
         specifier: 0.0.1-beta.4
         version: 0.0.1-beta.4(unocss@66.0.0(postcss@8.5.10)(vite@5.2.8(@types/node@20.19.25)(sass@1.99.0)(terser@5.31.6))(vue@3.4.38(typescript@5.5.4)))
@@ -3558,8 +3558,8 @@ packages:
     peerDependencies:
       vue: ~3.4.38
 
-  '@wot-ui/ui@2.0.2':
-    resolution: {integrity: sha512-GEFIPHjTS4BBLmY3rFqEYDPzQQrCwMGZqL3zNoplWz6j7V918lOPu8lCHgOcbe2PBzccjSZULHgo4jYjK/cmIQ==}
+  '@wot-ui/ui@2.0.3':
+    resolution: {integrity: sha512-2EJW3YR2KlS3ZXZmxeb9qXM5iCKimhmbRn8Bk1PM9TMGM29hfTdJv56+CNMjnWlz1IX+/A3KgR6rJdjR9ASG1w==}
     engines: {HBuilderX: ^3.8.7}
     peerDependencies:
       vue: '>=3.2.47'
@@ -12874,7 +12874,7 @@ snapshots:
     dependencies:
       vue: 3.4.38(typescript@5.5.4)
 
-  '@wot-ui/ui@2.0.2(vue@3.4.38(typescript@5.5.4))':
+  '@wot-ui/ui@2.0.3(vue@3.4.38(typescript@5.5.4))':
     dependencies:
       vue: 3.4.38(typescript@5.5.4)
 
