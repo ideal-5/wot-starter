@@ -75,8 +75,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(vue@3.4.38(typescript@5.5.4))
       '@wot-ui/ui':
-        specifier: ^2.0.3
-        version: 2.0.3(vue@3.4.38(typescript@5.5.4))
+        specifier: ^2.0.4
+        version: 2.0.4(vue@3.4.38(typescript@5.5.4))
       '@wot-ui/unocss-preset':
         specifier: 0.0.1-beta.4
         version: 0.0.1-beta.4(unocss@66.0.0(postcss@8.5.10)(vite@5.2.8(@types/node@20.19.25)(sass@1.99.0)(terser@5.31.6))(vue@3.4.38(typescript@5.5.4)))
@@ -3558,8 +3558,8 @@ packages:
     peerDependencies:
       vue: ~3.4.38
 
-  '@wot-ui/ui@2.0.3':
-    resolution: {integrity: sha512-2EJW3YR2KlS3ZXZmxeb9qXM5iCKimhmbRn8Bk1PM9TMGM29hfTdJv56+CNMjnWlz1IX+/A3KgR6rJdjR9ASG1w==}
+  '@wot-ui/ui@2.0.4':
+    resolution: {integrity: sha512-VtiGle7B6KHTcmn+94eYiI34ImWKDNVT8qCnEJbZ5XOCGJzPELl5N+cCj+1OHzIC2uZsvifuaDv3CZUwbyMQCA==}
     engines: {HBuilderX: ^3.8.7}
     peerDependencies:
       vue: '>=3.2.47'
@@ -3629,8 +3629,8 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  ajv@6.14.0:
-    resolution: {integrity: sha512-IWrosm/yrn43eiKqkfkHis7QioDleaXQHdDVPKg0FSwwd/DuvyX79TZnFOnYpB7dcsFAMmtFztZuXPDvSePkFw==}
+  ajv@6.15.0:
+    resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
 
   ajv@8.17.1:
     resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
@@ -4564,8 +4564,8 @@ packages:
     resolution: {integrity: sha512-C5Pn8Wk+1vKBoHghJODM63yk8MvrO9EWZUfkAt5HAqIgPE4/8FF0PEGHXtEd40l223+cE5ABWuPzm38PHFXfMA==}
     engines: {node: '>=10.2.0'}
 
-  enhanced-resolve@5.20.1:
-    resolution: {integrity: sha512-Qohcme7V1inbAfvjItgw0EaxVX5q2rdVEZHRBrEQdRZTssLDGsL8Lwrznl8oQ/6kuTJONLaDcGjkNP247XEhcA==}
+  enhanced-resolve@5.21.0:
+    resolution: {integrity: sha512-otxSQPw4lkOZWkHpB3zaEQs6gWYEsmX4xQF68ElXC/TWvGxGMSGOvoNbaLXm6/cS/fSfHtsEdw90y20PCd+sCA==}
     engines: {node: '>=10.13.0'}
 
   entities@4.5.0:
@@ -11690,7 +11690,7 @@ snapshots:
       '@typescript-eslint/parser': 8.58.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.5.4)
       '@typescript-eslint/typescript-estree': 8.58.0(typescript@5.5.4)
       '@typescript-eslint/utils': 8.58.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.5.4)
-      ajv: 6.14.0
+      ajv: 6.15.0
       eslint: 9.39.1(jiti@2.6.1)
       json-stable-stringify-without-jsonify: 1.0.1
       lodash.merge: 4.6.2
@@ -12874,7 +12874,7 @@ snapshots:
     dependencies:
       vue: 3.4.38(typescript@5.5.4)
 
-  '@wot-ui/ui@2.0.3(vue@3.4.38(typescript@5.5.4))':
+  '@wot-ui/ui@2.0.4(vue@3.4.38(typescript@5.5.4))':
     dependencies:
       vue: 3.4.38(typescript@5.5.4)
 
@@ -12939,7 +12939,7 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  ajv@6.14.0:
+  ajv@6.15.0:
     dependencies:
       fast-deep-equal: 3.1.3
       fast-json-stable-stringify: 2.1.0
@@ -13931,7 +13931,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  enhanced-resolve@5.20.1:
+  enhanced-resolve@5.21.0:
     dependencies:
       graceful-fs: 4.2.11
       tapable: 2.3.3
@@ -14163,7 +14163,7 @@ snapshots:
   eslint-plugin-n@17.24.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.5.4):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.1(jiti@2.6.1))
-      enhanced-resolve: 5.20.1
+      enhanced-resolve: 5.21.0
       eslint: 9.39.1(jiti@2.6.1)
       eslint-plugin-es-x: 7.8.0(eslint@9.39.1(jiti@2.6.1))
       get-tsconfig: 4.14.0
