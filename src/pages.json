@@ -166,7 +166,6 @@
             "navigationBarTitleText": "uni-ku/root"
           }
         },
-        // #ifdef H5
         {
           "path": "skills/index",
           "type": "page",
@@ -178,7 +177,6 @@
             "navigationBarTextStyle": "black"
           }
         }
-        // #endif
       ]
     },
     {
